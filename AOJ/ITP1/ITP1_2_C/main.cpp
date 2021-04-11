@@ -1,20 +1,30 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int a,b,c;
+    int a,b, c;
     cin >> a >> b >> c;
+    int seq[3] = {a,b,c};
 
-    if (a < b && b < c){
-        cout << a << " " << b << " " << c << endl;
-    } else if (a < c && c < b) {
-        cout << a << " " << c << " " << b << endl;
-    } else if (c < b && b < a){
-        cout << c << " " << b << " " << a << endl;
-    } else if (c < a && a < b){
-        cout << c << " " << a << " " << b << endl;
-    } else if (b > c && c < a){
-        cout << b << " " << c << " " << a << endl;
-    } else if (b < a && a < c){
-        cout << b << " " << a << " " << c << endl;
+    if (a > b){
+        seq[0]=b;
+        seq[1]=a;
+        if (a > c){
+            seq[1]=c;
+            seq[2]=a;
+            if (b > c){
+                seq[0]=c;
+                seq[1]=b;
+            }
+        }
+    } else if (a < b){
+        if (b > c){
+            seq[1]=c;
+            seq[2]=b;
+            if (a > c){
+                seq[0]=c;
+                seq[1]=a;
+            }            
+        }
     }
+    cout << seq[0] << " " << seq[1] << " " << seq[2] << endl;
 }
