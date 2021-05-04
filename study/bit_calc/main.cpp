@@ -14,7 +14,6 @@ int main(){
                 S.push_back(i);
             }
         }
-
     
         cout << bit << ": {";
         for (int i = 0; i < (int)S.size(); i++)
