@@ -1,11 +1,15 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int N, A;
+    int N, A, R;
     cin >> N >> A;
 
-    if ((N - A) % 500 == 0) cout << "Yes" << endl;
-    else cout << "No" << endl;
+    cout << (N % 500 <= A ? "Yes" : "No") << endl;
+
+    // 以下のアルゴでも解けるが非効率
+    // R = N % 500;
+    // if (R - A <= 0) cout << "Yes" << endl;
+    // else cout << "No" << endl;
 
     return 0;
 }

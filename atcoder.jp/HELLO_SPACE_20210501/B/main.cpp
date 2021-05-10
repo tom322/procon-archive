@@ -1,18 +1,17 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int N, D, H;
+    double N, D, H, d, h, tgt, mintgt;
     cin >> N >> D >> H;
+    mintgt = 1e9;
     
-    int br[N][2];
-
     for (int i = 0; i < N; i++)
     {
-        for (int j = 0; j < 2; j++)
-        {
-            cin >> br[i][j];
-        }
+        cin >> d >> h;
+        tgt = (H - h) / (D - d);
+        if (mintgt > tgt) mintgt = tgt;
     }
-
-        
+    
+    double ans = max((double)0, H - mintgt * D);
+    cout << ans << endl;
 }
