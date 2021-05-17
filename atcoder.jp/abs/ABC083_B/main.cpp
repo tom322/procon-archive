@@ -12,17 +12,8 @@ int main(){
     {
         int calc = 0;
         int mid = i;
-        calc += (mid % 10);
-        mid /= 10;
-        calc += (mid % 10);
-        mid /= 10;
-        calc += (mid % 10);
-        mid /= 10;
-        calc += (mid % 10);
-        mid /= 10;
-        calc += (mid % 10);
+        for(int j = 0; j < 5; j++) calc += mid % 10, mid /= 10;
         if(calc >= A && calc <= B) ans+=i;
-        // cout << calc << endl;
     }
     
     cout << ans << endl;
